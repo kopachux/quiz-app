@@ -50,13 +50,15 @@ const Question = ({
       <h1>Question : {currQues + 1} </h1>
 
       <div className="singleQuestion">
-        <h2>{questions[currQues].question}</h2>
+        <h2 style={{ color: "#fff" }}>{questions[currQues].question}</h2>
         <div className="options">
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {options &&
             options.map((i) => (
               <button
-                className={`singleOption  ${selected && handleSelect(i)}`}
+                className={`singleOption  ${
+                  selected && handleSelect(i)
+                } btn-rounded`}
                 key={i}
                 onClick={() => handleCheck(i)}
                 disabled={selected}
